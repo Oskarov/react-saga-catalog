@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# React Saga catalog 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Interface for interacting with rest api on redux saga 
+### Интерфейс взаимодействия с rest апи на redux saga
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+Personal project of [Dmitriy Oskarov](http://frontendfrontier.com/)
 
-### `yarn start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Technology stack:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* React
+* Redux
+* Redux-Saga
 
-### `yarn test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Description (Описание)
 
-### `yarn build`
+EN:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This is a personal project to study architecture based on the Rest api interaction logic
+and the system at the center of the business logic of which is redux saga.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+RU:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Это персональный проект для изучения архитектуры, основанной на логике взаимодействия Rest api 
+и системы в центре бизнес логики которой redux saga.
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Installing (Установка)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. clone
+2. yarn install
+3. yarn start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+thanks [wise.js](https://www.patreon.com/wisejs) for lessons and inspiration

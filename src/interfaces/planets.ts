@@ -1,3 +1,7 @@
+export interface IPlanetsState {
+    planets: IPlanet[];
+}
+
 export interface IPlanet {
     climate: string,
     created: string,

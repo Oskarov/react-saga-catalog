@@ -1,13 +1,14 @@
 import httpClient from "../httpClient";
-import {IRootUrls} from "../../interfaces";
+import {IApiRespond, IRootUrls} from "../../interfaces";
 
 const rootService = {
-    async getInitialData(): Promise<IRootUrls[] | false> {
+    async getInitialData(): Promise<IRootUrls | false> {
         try {
-            return await httpClient.request({
+            const sData:IApiRespond = await httpClient.request({
                 url: '/',
                 method: 'GET',
             });
+            return sData.data as IRootUrls;
         } catch (e) {
             return false;
         }

@@ -1,0 +1,45 @@
+body {
+    background: black;
+    color: white;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.link {
+    width: fit-content;
+    padding: 6px 8px;
+    display: block;
+    margin: 8px auto;
+    background: white;
+    text-transform: uppercase;
+    color: darkred;
+    border-radius: 6px;
+    font-family: Arial;
+}
+
+.page-header{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+

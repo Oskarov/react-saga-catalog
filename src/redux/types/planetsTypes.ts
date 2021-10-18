@@ -1,0 +1,1 @@
+export const SET_ALL_PLANETS = 'SET_ALL_PLANETS';

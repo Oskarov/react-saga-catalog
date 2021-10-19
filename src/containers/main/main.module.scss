@@ -3,6 +3,7 @@
 }
 
 .container {
+  margin-bottom: 32px;
   display: flex;
   align-items: stretch;
   justify-content: stretch;
@@ -11,5 +12,17 @@
 .planetImg {
   min-width: 300px;
   background: url("/assets/img/planet.png") no-repeat center;
+  background-size: contain;
+}
+
+.vehicleImg {
+  min-width: 300px;
+  background: url("/assets/img/vehicles.png") no-repeat center;
+  background-size: contain;
+}
+
+.starshipImg {
+  min-width: 300px;
+  background: url("/assets/img/starships.png") no-repeat center;
   background-size: contain;
 }

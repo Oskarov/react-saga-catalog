@@ -1,0 +1,1 @@
+export const SET_ALL_VEHICLES = 'SET_ALL_VEHICLES';

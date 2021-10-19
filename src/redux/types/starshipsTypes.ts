@@ -1,0 +1,1 @@
+export const SET_ALL_STARSHIPS = 'SET_ALL_STARSHIPS';

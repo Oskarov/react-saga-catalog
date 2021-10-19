@@ -1,3 +1,7 @@
+export interface IStarshipsState {
+    starships: IStarship[];
+}
+
 export interface IStarship {
     cargo_capacity: string,
     consumables: string,

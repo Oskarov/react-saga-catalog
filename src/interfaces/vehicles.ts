@@ -1,3 +1,7 @@
+export interface IVehiclesState {
+    vehicles: IVehicle[];
+}
+
 export interface IVehicle {
     cargo_capacity: string,
     consumables: string,

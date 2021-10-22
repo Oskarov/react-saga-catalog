@@ -1,15 +1,15 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 import {storeType} from "../../redux";
-import PlanetCard from "../../components/planetCard/planetCard";
+import StarshipCard from "../../components/starshipCard/starshipCard";
 
-interface PlanetsProps {
+interface starshipsProps {
 
 }
 
-const Starships: React.FC<PlanetsProps> = () => {
-    const {planets} = useSelector((state: storeType) => ({
-        planets: state.planets.planets
+const Starships: React.FC<starshipsProps> = () => {
+    const {starships} = useSelector((state: storeType) => ({
+        starships: state.starships.starships
     }));
 
     return <div>
@@ -18,7 +18,7 @@ const Starships: React.FC<PlanetsProps> = () => {
         </div>
 
         {
-            planets.map((planet, i)=><PlanetCard planet={planet} key={i}/>)
+            starships.map((starship, i)=><StarshipCard starship={starship} key={i}/>)
         }
     </div>;
 }

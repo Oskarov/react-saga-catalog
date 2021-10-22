@@ -2,14 +2,15 @@ import React from 'react';
 import {useSelector} from "react-redux";
 import {storeType} from "../../redux";
 import PlanetCard from "../../components/planetCard/planetCard";
+import VehicleCard from "../../components/vehicleCard/vehicleCard";
 
 interface PlanetsProps {
 
 }
 
 const Vehicles: React.FC<PlanetsProps> = () => {
-    const {planets} = useSelector((state: storeType) => ({
-        planets: state.planets.planets
+    const {vehicles} = useSelector((state: storeType) => ({
+        vehicles: state.vehicles.vehicles
     }));
 
     return <div>
@@ -18,7 +19,7 @@ const Vehicles: React.FC<PlanetsProps> = () => {
         </div>
 
         {
-            planets.map((planet, i)=><PlanetCard planet={planet} key={i}/>)
+            vehicles.map((vehicle, i)=><VehicleCard vehicle={vehicle} key={i}/>)
         }
     </div>;
 }

@@ -1,0 +1,62 @@
+.wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid white;
+}
+
+.vehicle{
+  width: 200px;
+  padding-right: 16px;
+  margin-right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-right: 1px solid white;
+
+  .vehiclePic{
+    margin-bottom: 16px;
+    width: 40px;
+    height: 40px;
+    background: url("/assets/img/planet-icon-white.svg")100% no-repeat;
+    background-size: contain;
+  }
+
+  .vehicleText{
+    >div{
+      >span{
+        &:first-child{
+          margin-right: 6px;
+          font-weight: bold;
+        }
+        &:last-child{
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.name{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 29px;
+}
+
+.table{
+  .row{
+    span{
+      &:first-child{
+        font-weight: bold;
+        margin-right: 6px;
+      }
+
+      &:last-child{
+        opacity: 0.8;
+      }
+    }
+  }
+}

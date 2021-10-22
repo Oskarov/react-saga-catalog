@@ -5,7 +5,6 @@ const initialState: IPlanetsState = {
     planets: []
 }
 
-
 export const planetsReducer = (state = initialState, action: any) => {
     switch (action.type) {
         case SET_ALL_PLANETS:

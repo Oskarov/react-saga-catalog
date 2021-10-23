@@ -1,20 +1,29 @@
 import React from 'react';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {storeType} from "../../redux";
 import StarshipCard from "../../components/starshipCard/starshipCard";
+import {refreshStarships} from "../../redux/actions/starshipsActions";
 
 interface starshipsProps {
 
 }
 
 const Starships: React.FC<starshipsProps> = () => {
+    const dispatch = useDispatch();
+
     const {starships} = useSelector((state: storeType) => ({
         starships: state.starships.starships
     }));
 
+    const refreshButtonHandler = () => {
+        dispatch(refreshStarships());
+    }
+
+
     return <div>
         <div className="page-header">
             <h1>Starships</h1>
+            <span className="refresh-button" onClick={refreshButtonHandler}/>
         </div>
 
         {

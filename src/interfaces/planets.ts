@@ -16,5 +16,6 @@ export interface IPlanet {
     rotation_period: string,
     surface_water: string,
     terrain: string,
-    url: string
+    url: string,
+    selected: boolean
 }

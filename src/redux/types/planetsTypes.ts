@@ -1,1 +1,2 @@
 export const SET_ALL_PLANETS = 'SET_ALL_PLANETS';
+export const SELECT_PLANET = 'SELECT_PLANET';

@@ -17,7 +17,7 @@ export function* routesSaga() {
                 yield fork(loadVehicles);
                 break;
             case pathname.endsWith(`${STARSHIPS}`):
-                yield fork(loadStarships);
+                yield fork(loadStarships, null);
                 break;
         }
     }

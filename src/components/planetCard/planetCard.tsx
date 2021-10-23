@@ -1,12 +1,21 @@
 import React from 'react';
 import styles from './planetCard.module.scss';
 import {IPlanet} from "../../interfaces/planets";
+import {useDispatch} from "react-redux";
+import {selectPlanet} from "../../redux/actions/planetsActions";
 
 interface PlanetCardProps {
     planet: IPlanet
 }
 
 const PlanetCard: React.FC<PlanetCardProps> = ({planet}) => {
+    const dispatch = useDispatch();
+
+    const selectPlanetHandler = () => {
+        dispatch(selectPlanet(planet.name));
+    }
+
+
     return <div className={styles.wrap}>
         <div className={styles.planet}>
             <div className={styles.planetPic}/>
@@ -26,7 +35,10 @@ const PlanetCard: React.FC<PlanetCardProps> = ({planet}) => {
             </div>
         </div>
         <div className={styles.info}>
-            <div className={styles.name}>{planet.name}</div>
+            <div className={styles.name}>
+                <input type="checkbox" checked={planet.selected} onChange={selectPlanetHandler} />
+                <span>{planet.name}</span>
+            </div>
 
             <div className={styles.table}>
                 <div className={styles.row}>

@@ -4,18 +4,19 @@ import starshipsService from "../../../api/services/starships-service";
 import {setAllStarships} from "../../actions/starshipsActions";
 import {REFRESH_STARSHIPS} from "../../types/starshipsTypes";
 import axios from "axios";
+import {loadingAction} from "../../actions/rootActions";
 
 export function* starshipsViewActionHandler() {
     yield fork(refreshStarships);
 }
 
 export function* loadStarships(cancelToken) {
- /*   yield put(loadingAction(true));*/
+    if (!cancelToken) yield put(loadingAction(true));
     const data: IRootUrls | false = yield starshipsService.getAll(cancelToken);
     if (data) {
         yield put(setAllStarships(data));
     }
-  /*  yield put(loadingAction(false));*/
+    if (!cancelToken) yield put(loadingAction(false));
     return true;
 }
 

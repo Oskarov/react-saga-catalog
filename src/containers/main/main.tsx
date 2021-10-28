@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './main.module.scss';
 import {Link} from "react-router-dom";
-import {PLANETS, STARSHIPS, VEHICLES} from "../../routes";
+import {PEOPLE, PLANETS, STARSHIPS, VEHICLES} from "../../routes";
 
 interface MainProps {
 
@@ -43,6 +43,19 @@ const Main: React.FC<MainProps> = () => {
                     possible.
                     <Link to={`/${STARSHIPS}`}><span className="link">Starships</span></Link>
                 </div>
+            </div>
+            <div className={styles.container}>
+                <div className={styles.text}>
+                    This incomplete list of characters from the Star Wars franchise contains only those which are
+                    considered part of the official Star Wars canon, as of the changes made by Lucasfilm in April 2014.
+                    Following its acquisition by The Walt Disney Company in 2012, Lucasfilm rebranded most of the
+                    novels, comics, video games and other works produced since the originating 1977 film Star Wars as
+                    Star Wars Legends and declared them non-canon to the rest of the franchise.[1][2][3] As such, the
+                    list contains only information from the Skywalker Saga films, the 2008 animated TV series Star Wars:
+                    The Clone Wars, and works published after April 2014.
+                    <Link to={`/${PEOPLE}`}><span className="link">People</span></Link>
+                </div>
+                <div className={styles.peopleImg}/>
             </div>
         </div>
     </div>;

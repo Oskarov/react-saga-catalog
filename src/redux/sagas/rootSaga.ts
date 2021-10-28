@@ -4,11 +4,13 @@ import {routesSaga} from "./routes";
 import {planetsViewActionHandler} from "./planets";
 import {starshipsViewActionHandler} from "./starships";
 import {vehiclesViewActionHandler} from "./vehicles";
+import {peopleViewActionHandler} from "./people";
 
 function* viewActionHandler() {
     yield fork(planetsViewActionHandler);
     yield fork(starshipsViewActionHandler);
     yield fork(vehiclesViewActionHandler);
+    yield fork(peopleViewActionHandler);
 }
 
 export default function* rootSaga() {

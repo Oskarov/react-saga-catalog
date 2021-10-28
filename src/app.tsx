@@ -6,10 +6,11 @@ import {history} from "./redux/reducers/rootReducer";
 import {Route, Switch} from "react-router";
 import Main from "./containers/main/main";
 import Loader from "./components/loader";
-import {PLANETS, STARSHIPS, VEHICLES} from "./routes";
+import {PEOPLE, PLANETS, STARSHIPS, VEHICLES} from "./routes";
 import Planets from "./containers/planets/planets";
 import Vehicles from "./containers/vehicles/vehicles";
 import Starships from "./containers/starships/starships";
+import People from "./containers/people/people";
 
 interface AppProps {
 
@@ -34,6 +35,9 @@ const App: React.FC<AppProps> = () => {
                         </Route>
                         <Route path={`/${STARSHIPS}`}>
                             <Starships/>
+                        </Route>
+                        <Route path={`/${PEOPLE}`}>
+                            <People/>
                         </Route>
                     </Switch>
                 </ConnectedRouter>

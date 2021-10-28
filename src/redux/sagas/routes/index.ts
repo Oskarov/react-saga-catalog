@@ -1,9 +1,10 @@
 import {take, fork} from "redux-saga/effects";
 import {LOCATION_CHANGE} from 'connected-react-router';
-import {PLANETS, STARSHIPS, VEHICLES} from "../../../routes";
+import {PEOPLE, PLANETS, STARSHIPS, VEHICLES} from "../../../routes";
 import {loadPlanets} from "../planets";
 import {loadVehicles} from "../vehicles";
 import {loadStarships} from "../starships";
+import {loadPeopleList} from "../people";
 
 export function* routesSaga() {
     while (true) {
@@ -18,6 +19,9 @@ export function* routesSaga() {
                 break;
             case pathname.endsWith(`${STARSHIPS}`):
                 yield fork(loadStarships, null);
+                break;
+            case pathname.endsWith(`${PEOPLE}`):
+                yield fork(loadPeopleList, {payload: {search: '', page: 1}});
                 break;
         }
     }

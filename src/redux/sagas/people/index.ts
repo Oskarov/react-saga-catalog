@@ -1,7 +1,8 @@
-import {fork, put, take, takeEvery} from "redux-saga/effects";
+import {fork, put, take, takeEvery, select} from "redux-saga/effects";
 import peopleService from "../../../api/services/people-service";
 import {setPeopleListAction} from "../../actions/peopleActions";
 import {GET_PEOPLE_LIST} from "../../types/peopleTypes";
+import {Simulate} from "react-dom/test-utils";
 
 export function* peopleViewActionHandler() {
     yield fork(getPeopleList);
@@ -16,9 +17,10 @@ export function* loadPeopleList({payload}) {
 }
 
 export function* getPeopleList() {
-    while (true){
+    while (true) {
         const data = yield take(GET_PEOPLE_LIST);
-        yield fork(loadPeopleList, data);
+        const {page, search} = yield select(state => state.people);
+        yield fork(loadPeopleList, {payload: {page, search}});
     }
 }
 

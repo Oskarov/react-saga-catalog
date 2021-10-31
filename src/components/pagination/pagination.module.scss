@@ -1,0 +1,16 @@
+.pagination{
+  width: 400px;
+  margin: 8px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .current{
+    text-decoration: underline;
+    font-weight: bold;
+
+    &:before, &:after{
+      content: "~";
+    }
+  }
+}

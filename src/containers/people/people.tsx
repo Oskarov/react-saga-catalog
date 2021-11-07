@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {storeType} from "../../redux";
 import PeopleRow from "../../components/peopleRow/peopleRow";
 import Pagination from "../../components/pagination/pagination";
 import {changePageAction, getPeopleListAction} from "../../redux/actions/peopleActions";
+import Search from "../../components/search/search";
 
 interface PeopleProps {
 
@@ -11,6 +12,8 @@ interface PeopleProps {
 
 const People: React.FC<PeopleProps> = () => {
     const dispatch = useDispatch();
+
+    const [search, setSearch] = useState('');
 
     const {people, page, count} = useSelector((state: storeType) => ({
         people: state.people.people,
@@ -25,10 +28,13 @@ const People: React.FC<PeopleProps> = () => {
         }
     }
 
+    console.log(search);
+
     return <div>
         <div className="page-header">
             <h1>People</h1>
         </div>
+        <Search search={search} setSearch={setSearch}/>
         <table>
             <thead>
             <tr>

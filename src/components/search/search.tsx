@@ -3,7 +3,7 @@ import styles from './search.module.scss';
 
 interface SearchProps {
     search: string,
-    setSearch: React.Dispatch<React.SetStateAction<string>>,
+    setSearch: (search: string) => void,
     testId?: string
 }
 

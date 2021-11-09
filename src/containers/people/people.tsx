@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {storeType} from "../../redux";
 import PeopleRow from "../../components/peopleRow/peopleRow";
 import Pagination from "../../components/pagination/pagination";
-import {changePageAction, getPeopleListAction} from "../../redux/actions/peopleActions";
+import {changePageAction, changeSearchAction, getPeopleListAction} from "../../redux/actions/peopleActions";
 import Search from "../../components/search/search";
 
 interface PeopleProps {
@@ -13,12 +13,11 @@ interface PeopleProps {
 const People: React.FC<PeopleProps> = () => {
     const dispatch = useDispatch();
 
-    const [search, setSearch] = useState('');
-
-    const {people, page, count} = useSelector((state: storeType) => ({
+    const {people, page, count, search} = useSelector((state: storeType) => ({
         people: state.people.people,
         page: state.people.page,
-        count: state.people.count
+        count: state.people.count,
+        search: state.people.search
     }));
 
     const changePage = (newPage: number) => {
@@ -34,7 +33,7 @@ const People: React.FC<PeopleProps> = () => {
         <div className="page-header">
             <h1>People</h1>
         </div>
-        <Search search={search} setSearch={setSearch}/>
+        <Search search={search} setSearch={(search: string) => dispatch(changeSearchAction(search))}/>
         <table>
             <thead>
             <tr>

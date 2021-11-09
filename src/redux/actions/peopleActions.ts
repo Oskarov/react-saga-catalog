@@ -1,5 +1,13 @@
 import {IImportPeopleList} from "../../interfaces/people";
-import {CHANGE_PAGE, GET_PEOPLE_LIST, SET_ERROR, SET_PAGE, SET_PEOPLE_LIST, SET_SEARCH} from "../types/peopleTypes";
+import {
+    CHANGE_PAGE,
+    CHANGE_SEARCH,
+    GET_PEOPLE_LIST,
+    SET_ERROR,
+    SET_PAGE,
+    SET_PEOPLE_LIST,
+    SET_SEARCH
+} from "../types/peopleTypes";
 
 export const getPeopleListAction = () => {
     return {
@@ -17,6 +25,13 @@ export const setPeopleListAction = (data: IImportPeopleList) => {
 export const setSearchAction = (data: string) => {
     return {
         type: SET_SEARCH,
+        payload: data
+    }
+}
+
+export const changeSearchAction = (data: string) => {
+    return {
+        type: CHANGE_SEARCH,
         payload: data
     }
 }

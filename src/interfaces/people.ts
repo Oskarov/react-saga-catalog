@@ -26,5 +26,6 @@ export interface IPeople {
     films: string[]
     species: string[],
     vehicles: string[],
-    starships: string[]
+    starships: string[],
+    url: string,
 }

@@ -27,13 +27,13 @@ const People: React.FC<PeopleProps> = () => {
         }
     }
 
-    console.log(search);
-
     return <div>
         <div className="page-header">
             <h1>People</h1>
         </div>
-        <Search search={search} setSearch={(search: string) => dispatch(changeSearchAction(search))}/>
+        <Search search={search} setSearch={(search: string) => {
+            dispatch(changeSearchAction(search));
+        }}/>
         <table>
             <thead>
             <tr>
@@ -43,6 +43,7 @@ const People: React.FC<PeopleProps> = () => {
                 <th>Gender</th>
                 <th>Height</th>
                 <th>Mass</th>
+                <th/>
                 <th/>
             </tr>
             </thead>

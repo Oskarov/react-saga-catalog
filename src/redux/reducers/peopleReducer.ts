@@ -21,6 +21,7 @@ export const peopleReducer = (state = initialState, action: any) => {
         case SET_SEARCH:
             return {
                 ...state,
+                page: 1,
                 search: action.payload
             }
         case SET_PAGE:

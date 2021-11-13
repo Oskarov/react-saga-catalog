@@ -1,4 +1,4 @@
-import {fork, put, take, select} from "redux-saga/effects";
+import {fork, put, take, select, takeLatest} from "redux-saga/effects";
 import peopleService from "../../../api/services/people-service";
 import {setPageAction, setPeopleListAction, setSearchAction} from "../../actions/peopleActions";
 import {CHANGE_PAGE, CHANGE_SEARCH, GET_PEOPLE_LIST} from "../../types/peopleTypes";
@@ -35,10 +35,13 @@ export function* changePage() {
 }
 
 export function* changeSearch() {
-    while (true) {
-        const data = yield take(CHANGE_SEARCH);
-        if (data) {
-            yield put(setSearchAction( data.payload));
-        }
+        yield takeLatest(CHANGE_SEARCH, takeSearch)
+}
+
+export function* takeSearch(data) {
+    if (data) {
+        yield put(setSearchAction(data.payload));
+        const {page, search} = yield select(state => state.people);
+        yield fork(loadPeopleList, {payload: {page, search}});
     }
 }

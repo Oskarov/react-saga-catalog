@@ -1,5 +1,5 @@
 import httpClient from "../httpClient";
-import {IImportPeopleList} from "../../interfaces/people";
+import {IImportPeopleList, IPeople} from "../../interfaces/people";
 import {IApiCatalogRespond} from "../../interfaces";
 
 const peopleService = {
@@ -10,6 +10,18 @@ const peopleService = {
                 method: 'GET',
             });
             return result.data as IImportPeopleList
+        } catch (e) {
+            return false;
+        }
+    },
+    async getPeopleTarget(id:number): Promise<IPeople | false> {
+        try {
+            const result: any = await httpClient.request({
+                url: `people/${id}`,
+                method: 'GET',
+            });
+            console.log(result)
+            return result.data as IPeople
         } catch (e) {
             return false;
         }

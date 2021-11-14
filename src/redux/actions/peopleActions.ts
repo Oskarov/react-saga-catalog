@@ -1,11 +1,11 @@
-import {IImportPeopleList} from "../../interfaces/people";
+import {IImportPeopleList, IPeople} from "../../interfaces/people";
 import {
     CHANGE_PAGE,
     CHANGE_SEARCH,
-    GET_PEOPLE_LIST,
+    GET_PEOPLE_LIST, GET_PEOPLE_TARGET,
     SET_ERROR,
     SET_PAGE,
-    SET_PEOPLE_LIST,
+    SET_PEOPLE_LIST, SET_PEOPLE_TARGET,
     SET_SEARCH
 } from "../types/peopleTypes";
 
@@ -18,6 +18,20 @@ export const getPeopleListAction = () => {
 export const setPeopleListAction = (data: IImportPeopleList) => {
     return {
         type: SET_PEOPLE_LIST,
+        payload: data
+    }
+}
+
+export const getPeopleTargetAction = (id: number) => {
+    return {
+        type: GET_PEOPLE_TARGET,
+        payload: id
+    }
+}
+
+export const setPeopleTargetAction = (data: IPeople) => {
+    return {
+        type: SET_PEOPLE_TARGET,
         payload: data
     }
 }

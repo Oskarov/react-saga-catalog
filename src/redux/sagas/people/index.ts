@@ -1,12 +1,13 @@
 import {fork, put, take, select, takeLatest} from "redux-saga/effects";
 import peopleService from "../../../api/services/people-service";
-import {setPageAction, setPeopleListAction, setSearchAction} from "../../actions/peopleActions";
-import {CHANGE_PAGE, CHANGE_SEARCH, GET_PEOPLE_LIST} from "../../types/peopleTypes";
+import {setPageAction, setPeopleListAction, setPeopleTargetAction, setSearchAction} from "../../actions/peopleActions";
+import {CHANGE_PAGE, CHANGE_SEARCH, GET_PEOPLE_LIST, GET_PEOPLE_TARGET} from "../../types/peopleTypes";
 
 export function* peopleViewActionHandler() {
     yield fork(getPeopleList);
     yield fork(changePage);
     yield fork(changeSearch);
+    yield fork(getPeopleTarget);
 }
 
 export function* loadPeopleList({payload}) {
@@ -25,6 +26,18 @@ export function* getPeopleList() {
     }
 }
 
+export function* getPeopleTarget() {
+    while (true) {
+        const data = yield take(GET_PEOPLE_TARGET);
+        if (data) {
+            const target = yield peopleService.getPeopleTarget(data.payload);
+            if (target) {
+                yield put(setPeopleTargetAction(target));
+            }
+        }
+    }
+}
+
 export function* changePage() {
     while (true) {
         const data = yield take(CHANGE_PAGE);
@@ -35,7 +48,7 @@ export function* changePage() {
 }
 
 export function* changeSearch() {
-        yield takeLatest(CHANGE_SEARCH, takeSearch)
+    yield takeLatest(CHANGE_SEARCH, takeSearch)
 }
 
 export function* takeSearch(data) {

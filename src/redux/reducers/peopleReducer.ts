@@ -1,4 +1,4 @@
-import {SET_ERROR, SET_PAGE, SET_PEOPLE_LIST, SET_SEARCH} from "../types/peopleTypes";
+import {SET_ERROR, SET_PAGE, SET_PEOPLE_LIST, SET_PEOPLE_TARGET, SET_SEARCH} from "../types/peopleTypes";
 import {IPeopleState} from "../../interfaces/people";
 
 const initialState: IPeopleState = {
@@ -12,11 +12,15 @@ const initialState: IPeopleState = {
 export const peopleReducer = (state = initialState, action: any) => {
     switch (action.type) {
         case SET_PEOPLE_LIST:
-            console.dir(action)
             return {
                 ...state,
                 count: action.payload.count,
                 people: action.payload.results
+            }
+        case SET_PEOPLE_TARGET:
+            return {
+                ...state,
+                people: action.payload || []
             }
         case SET_SEARCH:
             return {

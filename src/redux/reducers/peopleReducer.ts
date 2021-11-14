@@ -20,7 +20,7 @@ export const peopleReducer = (state = initialState, action: any) => {
         case SET_PEOPLE_TARGET:
             return {
                 ...state,
-                people: action.payload || []
+                people: [action.payload] || []
             }
         case SET_SEARCH:
             return {

@@ -37,11 +37,20 @@ and the system at the center of the business logic of which is redux saga.
 
 ### What's interesting
 
-* Загрузка информации через саги при инициализации приложения (имитация данных которые нужны всему приложению)
+* Loading information through sagas when initializing the application (simulating the data that the entire application needs).
+* Loading information through sagas on router events. Removing the business logic for loading data from the view. Events are triggered by a special routeSaga.
+* planets - selection of planets with parallel operation of the reducer and interception by the saga.
+* starships is an asynchronous saga on the refresh button that cancels duplicate requests in the Axios instance.
+* vehicles - a saga on the refresh button that executes heavy requests exclusively in turn (action channel).
+* people - a saga with search and pagination, as well as the transition to detailing tied to routing.
+
+
+* Загрузка информации через саги при инициализации приложения (имитация данных которые нужны всему приложению).
 * Загрузка информации через саги на событиях роутера. Вынесение бизнес логики загрузки данных из view. События тригерятся специальной routeSaga.
 * planets - выбор планет с параллельной работой редюсера и перехватом сагой.
 * starships - асинхронная сага на кнопке обновления, которая отменяет повторяющиеся запросы в инстансе Axios.
-* vehicles - сага на кнопке обновления которая исполняет тяжелые запросы исключительно по очереди (action channel)
+* vehicles - сага на кнопке обновления которая исполняет тяжелые запросы исключительно по очереди (action channel).
+* people - сага с поиском и пагинацией, а так же переходом к детализации завязанной на маршрутизации.
 
 ---
 

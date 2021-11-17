@@ -13,7 +13,6 @@ export function* routesSaga() {
         const action: any = yield take(LOCATION_CHANGE);
         const pathname = yield action.payload.location.pathname;
         const route = new RoutesComparator(pathname);
-
         const planetsRoute = yield route.match(PLANETS);
         const vehiclesRoute = yield route.match(VEHICLES);
         const starshipsRoute = yield route.match(STARSHIPS);
